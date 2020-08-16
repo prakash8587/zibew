@@ -5,18 +5,22 @@ import React, {Component} from 'react';
 import {AppRegistry} from 'react-native';
 import Navigation from './src/navigation/Navigation';
 import {name as appName} from './app.json';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-// import Reducer from './src/redux/reducer/reducer';
+import Reducer from './src/redux/reducer/reducer';
+import createSagaMiddleware from 'redux-saga';
+import articleSaga from './src/redux/saga/saga';
 
-// let store = createStore(Reducer);
+const sagaMiddleware = createSagaMiddleware();
+let store = createStore(Reducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(articleSaga);
 
 export class AppRoot extends Component {
   render() {
     return (
-      //   <Provider store={store}>
-      <Navigation />
-      //   </Provider>
+      <Provider store={store}>
+        <Navigation />
+      </Provider>
     );
   }
 }

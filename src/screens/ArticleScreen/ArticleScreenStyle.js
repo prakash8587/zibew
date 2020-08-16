@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-export default styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   MainContainer: {
     justifyContent: 'center',
     flex: 1,
@@ -22,4 +22,17 @@ export default styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+  listPadding: {padding: 16, height: 120},
+  listVertical: {padding: 16},
+  seperator: {height: 20},
+  footer: {height: 60},
+  loaderOuterView: {
+    height: 200,
+    width: 200,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    borderRadius: 8,
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
+  loaderText: {alignSelf: 'center', marginTop: 30, fontSize: 16},
 });
