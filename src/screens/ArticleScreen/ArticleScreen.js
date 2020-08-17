@@ -26,7 +26,7 @@ class ArticleScreen extends Component {
       CustomerId: 5879,
       lastUpdatedTimeTicks: 0,
     };
-    // this.props.fetchArticleList(params);
+    this.props.fetchArticleList(params);
   }
 
   setSelectedTab = (tab) => {
